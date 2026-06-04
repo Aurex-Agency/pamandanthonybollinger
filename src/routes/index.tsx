@@ -204,15 +204,22 @@ function Home() {
 
       {/* STATS — playbill */}
       <section className="bg-cream paper-grain py-16 md:py-20 border-y border-burgundy/15">
-        <div className="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-y-10 text-center">
+        <div className="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 text-center">
           {[
             { n: 33, suffix: "", label: "Years Married" },
             { n: 100, suffix: "+", label: "Dates a Year" },
             { n: 100000, suffix: "+", label: "People Reached" },
             { n: 9, suffix: "", label: "Countries" },
           ].map((s, i) => (
-            <div key={s.label} className={`reveal relative px-4 ${i < 3 ? "md:border-r md:border-gold/40" : ""}`}>
-              <div className="font-display font-bold text-5xl md:text-6xl text-sienna leading-none mb-3">
+            <div
+              key={s.label}
+              className={`reveal relative px-4 py-6 md:py-0
+                ${i % 2 === 0 ? "border-r border-gold/40 md:border-r" : ""}
+                ${i < 2 ? "border-b border-gold/40 md:border-b-0" : ""}
+                ${i === 1 ? "md:border-r md:border-gold/40" : ""}
+                ${i === 2 ? "md:border-r md:border-gold/40" : ""}`}
+            >
+              <div className="font-display font-bold text-4xl sm:text-5xl md:text-6xl text-sienna leading-none mb-3">
                 <Counter end={s.n} suffix={s.suffix} />
               </div>
               <p className="text-burgundy/70 text-[10px] md:text-xs tracking-[0.3em] uppercase font-bold">{s.label}</p>
