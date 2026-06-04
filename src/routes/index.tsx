@@ -168,10 +168,10 @@ function Home() {
           </div>
 
           <h1 className="animate-fade-up font-display text-cream leading-[0.92] mb-4 letterpress">
-            <span className="block italic font-medium text-5xl md:text-7xl lg:text-8xl">
+            <span className="block italic font-medium text-4xl sm:text-5xl md:text-7xl lg:text-8xl">
               Anthony <span className="text-amber not-italic">&</span> Pam
             </span>
-            <span className="block font-bold tracking-tight text-6xl md:text-8xl lg:text-[9rem] mt-1">
+            <span className="block font-bold tracking-tight text-5xl sm:text-6xl md:text-8xl lg:text-[9rem] mt-1">
               Bollinger
             </span>
           </h1>
