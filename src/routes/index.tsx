@@ -394,9 +394,9 @@ function Home() {
                   <span className="w-10 h-10 rounded-full bg-amber/15 border border-amber/40 flex items-center justify-center text-amber group-hover:bg-amber group-hover:text-cream transition"><Phone size={16} /></span>
                   <span className="font-semibold tracking-wide">662-983-5538</span>
                 </a>
-                <a href="mailto:booking@bollingerministries.com" className="flex items-center gap-4 text-burgundy hover:text-amber transition group">
-                  <span className="w-10 h-10 rounded-full bg-amber/15 border border-amber/40 flex items-center justify-center text-amber group-hover:bg-amber group-hover:text-cream transition"><Mail size={16} /></span>
-                  <span className="font-semibold tracking-wide">booking@bollingerministries.com</span>
+                <a href="mailto:booking@bollingerministries.com" className="flex items-center gap-4 text-burgundy hover:text-amber transition group min-w-0">
+                  <span className="shrink-0 w-10 h-10 rounded-full bg-amber/15 border border-amber/40 flex items-center justify-center text-amber group-hover:bg-amber group-hover:text-cream transition"><Mail size={16} /></span>
+                  <span className="font-semibold tracking-wide break-all text-sm sm:text-base">booking@bollingerministries.com</span>
                 </a>
                 <div className="flex items-center gap-4 text-burgundy">
                   <span className="w-10 h-10 rounded-full bg-amber/15 border border-amber/40 flex items-center justify-center text-amber"><MapPin size={16} /></span>
