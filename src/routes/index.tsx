@@ -7,6 +7,8 @@ import { toast } from "sonner";
 import { Toaster } from "@/components/ui/sonner";
 import coupleAsset from "@/assets/couple-sunset.asset.json";
 import stageAsset from "@/assets/stage-faithful.asset.json";
+import { PhotoMarquee } from "@/components/PhotoMarquee";
+
 
 
 export const Route = createFileRoute("/")({
