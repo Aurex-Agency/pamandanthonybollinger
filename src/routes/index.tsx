@@ -268,38 +268,41 @@ function Home() {
           <div className="reveal text-center mb-12">
             <div className="flex items-center justify-center gap-4 mb-4">
               <div className="h-px w-10 bg-gold/50" />
-              <p className="text-gold tracking-[0.3em] text-xs uppercase font-bold">Watch & Listen</p>
+              <p className="text-gold tracking-[0.3em] text-xs uppercase font-bold animate-pulse">★ New Single · Out Now</p>
               <div className="h-px w-10 bg-gold/50" />
             </div>
-            <h2 className="font-display text-5xl md:text-6xl text-cream mb-4 leading-tight letterpress">
-              Experience
-              <span className="italic font-medium text-gold"> the Sound.</span>
+            <h2 className="font-display text-5xl md:text-7xl text-cream mb-5 leading-[1.02] letterpress">
+              <span className="italic font-medium text-gold">"I'm Living</span>
+              <span className="italic font-medium text-gold"> Proof."</span>
             </h2>
-            <p className="text-cream/70 max-w-2xl mx-auto text-lg font-light">
-              From a quiet hymn to a foot-tapping classic. Hear what a night with Anthony & Pam feels like.
+            <div className="flex justify-center text-amber mb-6"><Flourish /></div>
+            <p className="text-cream/85 max-w-2xl mx-auto text-lg md:text-xl font-light leading-relaxed">
+              Eleven days on the ventilator. Thousands of prayers. One song that came out of it.
+              <span className="block mt-3 text-cream/65 italic">This is Anthony's testimony, set to music.</span>
             </p>
           </div>
 
-          <div className="reveal relative">
-            <div className="absolute -inset-3 border border-gold/30" />
-            <div className="relative aspect-video overflow-hidden shadow-2xl">
-              <img src={singingAsset.url} alt="Anthony & Pam Bollinger performing" className="absolute inset-0 w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-burgundy-deep/55 flex items-center justify-center">
-                <button className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-amber text-burgundy-deep flex items-center justify-center hover:scale-110 transition-transform shadow-2xl border-4 border-gold/40" aria-label="Play video">
-                  <Play size={32} fill="currentColor" />
-                </button>
-              </div>
-              <CornerFrame />
-            </div>
+          <LivingProofPlayer />
+
+          <div className="reveal mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-[10px] md:text-xs tracking-[0.3em] uppercase font-bold text-gold/80">
+            <span>Out Now</span>
+            <span className="text-gold/40">·</span>
+            <span>Streaming Soon</span>
+            <span className="text-gold/40">·</span>
+            <span>Radio Add Date TBA</span>
           </div>
 
-          <p className="reveal text-center mt-8 text-cream/70 italic font-light">
-            Featuring their latest single,{" "}
-            <span className="text-gold not-italic font-display font-semibold">"I'm Living Proof,"</span>{" "}
-            coming soon to streaming & radio.
-          </p>
+          <div className="reveal mt-10 text-center">
+            <a href="#booking" className="stamped inline-block bg-amber text-burgundy-deep px-10 py-4 rounded-sm font-display font-bold tracking-widest uppercase text-sm">
+              Book the Living Proof Tour
+            </a>
+            <p className="mt-5 text-cream/60 italic font-light text-sm">
+              Tap the speaker to hear the song that almost didn't get sung.
+            </p>
+          </div>
         </div>
       </section>
+
 
       {/* BOOKING */}
       <section id="booking" className="bg-cream paper-grain py-24 md:py-32 px-6">
