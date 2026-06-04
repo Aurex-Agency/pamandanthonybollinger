@@ -462,16 +462,33 @@ function Home() {
           <div className="flex justify-center text-amber my-4"><Flourish /></div>
           <p className="italic text-cream/60 mb-8 font-light">Sharing what God has done for us.</p>
           <div className="flex justify-center gap-4 mb-8">
-            {[Facebook, Instagram, Youtube].map((Icon, i) => (
-              <a
-                key={i}
-                href="#"
-                aria-label="Social"
-                className="w-10 h-10 rounded-full border border-gold/40 flex items-center justify-center hover:bg-amber hover:text-burgundy-deep hover:border-amber transition"
-              >
-                <Icon size={16} />
-              </a>
-            ))}
+            <a
+              href="https://www.facebook.com/anthony.bollinger"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              className="w-10 h-10 rounded-full border border-gold/40 flex items-center justify-center hover:bg-amber hover:text-burgundy-deep hover:border-amber transition"
+            >
+              <Facebook size={16} />
+            </a>
+            <a
+              href="https://www.instagram.com/anthonybollinger237/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="w-10 h-10 rounded-full border border-gold/40 flex items-center justify-center hover:bg-amber hover:text-burgundy-deep hover:border-amber transition"
+            >
+              <Instagram size={16} />
+            </a>
+            <a
+              href="https://www.youtube.com/@ourmusicallegacy"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="YouTube"
+              className="w-10 h-10 rounded-full border border-gold/40 flex items-center justify-center hover:bg-amber hover:text-burgundy-deep hover:border-amber transition"
+            >
+              <Youtube size={16} />
+            </a>
           </div>
           <div className="text-[10px] tracking-[0.4em] text-gold/70 font-bold space-x-3">
             <span>#ITSAGODTHING</span><span>·</span><span>#IMLIVINGPROOF</span>
