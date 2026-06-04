@@ -94,13 +94,14 @@ function LivingProofPlayer() {
   );
 }
 
-function CornerFrame() {
+function CornerFrame({ hideOnMobile = false }: { hideOnMobile?: boolean }) {
+  const base = hideOnMobile ? "hidden md:block" : "block";
   return (
     <>
-      <div className="absolute top-6 left-6 w-10 h-10 border-t-2 border-l-2 border-gold/40 pointer-events-none" />
-      <div className="absolute top-6 right-6 w-10 h-10 border-t-2 border-r-2 border-gold/40 pointer-events-none" />
-      <div className="absolute bottom-6 left-6 w-10 h-10 border-b-2 border-l-2 border-gold/40 pointer-events-none" />
-      <div className="absolute bottom-6 right-6 w-10 h-10 border-b-2 border-r-2 border-gold/40 pointer-events-none" />
+      <div className={`${base} absolute top-6 left-6 w-10 h-10 border-t-2 border-l-2 border-gold/40 pointer-events-none`} />
+      <div className={`${base} absolute top-6 right-6 w-10 h-10 border-t-2 border-r-2 border-gold/40 pointer-events-none`} />
+      <div className={`${base} absolute bottom-6 left-6 w-10 h-10 border-b-2 border-l-2 border-gold/40 pointer-events-none`} />
+      <div className={`${base} absolute bottom-6 right-6 w-10 h-10 border-b-2 border-r-2 border-gold/40 pointer-events-none`} />
     </>
   );
 }
