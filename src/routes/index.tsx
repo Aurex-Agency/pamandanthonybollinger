@@ -162,7 +162,7 @@ function Home() {
           <div className="animate-fade-up flex items-center justify-center gap-4 mb-7">
             <div className="hidden sm:block h-px w-12 bg-gold/50" />
             <p className="text-gold tracking-[0.35em] text-[10px] md:text-xs font-bold uppercase">
-              Bruce, Mississippi · Est. 2021
+              Bruce, Mississippi · Est. 1994
             </p>
             <div className="hidden sm:block h-px w-12 bg-gold/50" />
           </div>
