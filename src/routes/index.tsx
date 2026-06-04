@@ -222,7 +222,7 @@ function Home() {
       </section>
 
       {/* OUR STORY */}
-      <section id="story" className="relative bg-paper paper-grain py-24 md:py-32 px-6">
+      <section id="story" className="relative bg-paper paper-grain py-16 md:py-32 px-6">
         <div className="max-w-6xl mx-auto grid md:grid-cols-12 gap-12 md:gap-16 items-start">
           <div className="reveal md:col-span-5 md:sticky md:top-28">
             <div className="relative">
@@ -272,7 +272,7 @@ function Home() {
       </section>
 
       {/* WHAT WE PLAY */}
-      <section id="music" className="relative bg-burgundy text-cream py-24 md:py-32 px-6 overflow-hidden">
+      <section id="music" className="relative bg-burgundy text-cream py-16 md:py-32 px-6 overflow-hidden">
         <div className="absolute inset-0 dark-grain opacity-15 pointer-events-none" />
         <div className="relative max-w-6xl mx-auto">
           <div className="reveal text-center mb-16">
@@ -319,7 +319,7 @@ function Home() {
       </section>
 
       {/* WATCH & LISTEN */}
-      <section id="listen" className="relative bg-burgundy-deep py-24 md:py-32 px-6 overflow-hidden">
+      <section id="listen" className="relative bg-burgundy-deep py-16 md:py-32 px-6 overflow-hidden">
         <div className="absolute inset-0 dark-grain opacity-25 pointer-events-none" />
         <div className="relative max-w-5xl mx-auto">
           <div className="reveal text-center mb-12">
@@ -362,7 +362,7 @@ function Home() {
 
 
       {/* BOOKING */}
-      <section id="booking" className="bg-cream paper-grain py-24 md:py-32 px-6">
+      <section id="booking" className="bg-cream paper-grain py-16 md:py-32 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="reveal text-center max-w-2xl mx-auto mb-14">
             <div className="flex items-center justify-center gap-4 mb-4">
