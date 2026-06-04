@@ -62,7 +62,7 @@ function LivingProofPlayer() {
           <button
             onClick={() => setUnmuted(true)}
             aria-label="Turn audio on"
-            className="absolute inset-0 flex flex-col items-center justify-center bg-burgundy-deep/35 hover:bg-burgundy-deep/45 transition group"
+            className="absolute inset-0 flex flex-col items-center justify-center bg-burgundy-deep hover:bg-burgundy-deep/95 transition group"
           >
             <span className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-amber text-burgundy-deep flex items-center justify-center shadow-2xl border-4 border-gold/40 group-hover:scale-110 transition-transform">
               <Volume2 size={32} fill="currentColor" />
