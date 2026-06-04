@@ -62,12 +62,19 @@ function LivingProofPlayer() {
           <button
             onClick={() => setUnmuted(true)}
             aria-label="Turn audio on"
-            className="absolute inset-0 flex flex-col items-center justify-center bg-burgundy-deep/35 hover:bg-burgundy-deep/45 transition group"
+            className="absolute inset-0 flex flex-col items-center justify-center bg-burgundy-deep hover:bg-burgundy-deep/95 transition group overflow-hidden"
           >
-            <span className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-amber text-burgundy-deep flex items-center justify-center shadow-2xl border-4 border-gold/40 group-hover:scale-110 transition-transform">
+            <img
+              src={stageAsset.url}
+              alt=""
+              aria-hidden
+              className="absolute inset-0 w-full h-full object-cover opacity-25 mix-blend-overlay grayscale contrast-125"
+            />
+            <div className="absolute inset-0 dark-grain opacity-30 pointer-events-none" />
+            <span className="relative w-20 h-20 md:w-24 md:h-24 rounded-full bg-amber text-burgundy-deep flex items-center justify-center shadow-2xl border-4 border-gold/40 group-hover:scale-110 transition-transform">
               <Volume2 size={32} fill="currentColor" />
             </span>
-            <span className="mt-5 text-cream text-[10px] md:text-xs tracking-[0.4em] uppercase font-bold">
+            <span className="relative mt-5 text-cream text-[10px] md:text-xs tracking-[0.4em] uppercase font-bold">
               Tap to Hear the Story
             </span>
           </button>
@@ -87,13 +94,14 @@ function LivingProofPlayer() {
   );
 }
 
-function CornerFrame() {
+function CornerFrame({ hideOnMobile = false }: { hideOnMobile?: boolean }) {
+  const base = hideOnMobile ? "hidden md:block" : "block";
   return (
     <>
-      <div className="absolute top-6 left-6 w-10 h-10 border-t-2 border-l-2 border-gold/40 pointer-events-none" />
-      <div className="absolute top-6 right-6 w-10 h-10 border-t-2 border-r-2 border-gold/40 pointer-events-none" />
-      <div className="absolute bottom-6 left-6 w-10 h-10 border-b-2 border-l-2 border-gold/40 pointer-events-none" />
-      <div className="absolute bottom-6 right-6 w-10 h-10 border-b-2 border-r-2 border-gold/40 pointer-events-none" />
+      <div className={`${base} absolute top-6 left-6 w-10 h-10 border-t-2 border-l-2 border-gold/40 pointer-events-none`} />
+      <div className={`${base} absolute top-6 right-6 w-10 h-10 border-t-2 border-r-2 border-gold/40 pointer-events-none`} />
+      <div className={`${base} absolute bottom-6 left-6 w-10 h-10 border-b-2 border-l-2 border-gold/40 pointer-events-none`} />
+      <div className={`${base} absolute bottom-6 right-6 w-10 h-10 border-b-2 border-r-2 border-gold/40 pointer-events-none`} />
     </>
   );
 }
@@ -147,22 +155,23 @@ function Home() {
         />
         <div className="absolute inset-0 ink-vignette opacity-70" />
         <div className="absolute inset-0 dark-grain opacity-20 pointer-events-none" />
-        <CornerFrame />
+        <CornerFrame hideOnMobile />
+
 
         <div className="relative z-10 text-center px-6 max-w-5xl">
           <div className="animate-fade-up flex items-center justify-center gap-4 mb-7">
-            <div className="h-px w-12 bg-gold/50" />
+            <div className="hidden sm:block h-px w-12 bg-gold/50" />
             <p className="text-gold tracking-[0.35em] text-[10px] md:text-xs font-bold uppercase">
               Bruce, Mississippi · Est. 2021
             </p>
-            <div className="h-px w-12 bg-gold/50" />
+            <div className="hidden sm:block h-px w-12 bg-gold/50" />
           </div>
 
           <h1 className="animate-fade-up font-display text-cream leading-[0.92] mb-4 letterpress">
-            <span className="block italic font-medium text-5xl md:text-7xl lg:text-8xl">
+            <span className="block italic font-medium text-4xl sm:text-5xl md:text-7xl lg:text-8xl">
               Anthony <span className="text-amber not-italic">&</span> Pam
             </span>
-            <span className="block font-bold tracking-tight text-6xl md:text-8xl lg:text-[9rem] mt-1">
+            <span className="block font-bold tracking-tight text-5xl sm:text-6xl md:text-8xl lg:text-[9rem] mt-1">
               Bollinger
             </span>
           </h1>
@@ -171,7 +180,7 @@ function Home() {
             <Flourish />
           </div>
 
-          <p className="animate-fade-up-delay font-sans text-cream/85 text-lg md:text-xl font-light italic leading-relaxed max-w-2xl mx-auto mb-12">
+          <p className="animate-fade-up-delay font-sans text-cream/85 text-base sm:text-lg md:text-xl font-light italic leading-relaxed max-w-2xl mx-auto mb-10 md:mb-12">
             A friendly mix of oldies and gospel.{" "}
             <span className="not-italic font-semibold text-gold">Sharing what God has done</span>{" "}
             through music and testimony.
@@ -195,15 +204,22 @@ function Home() {
 
       {/* STATS — playbill */}
       <section className="bg-cream paper-grain py-16 md:py-20 border-y border-burgundy/15">
-        <div className="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-y-10 text-center">
+        <div className="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 text-center">
           {[
             { n: 33, suffix: "", label: "Years Married" },
             { n: 100, suffix: "+", label: "Dates a Year" },
             { n: 100000, suffix: "+", label: "People Reached" },
             { n: 9, suffix: "", label: "Countries" },
           ].map((s, i) => (
-            <div key={s.label} className={`reveal relative px-4 ${i < 3 ? "md:border-r md:border-gold/40" : ""}`}>
-              <div className="font-display font-bold text-5xl md:text-6xl text-sienna leading-none mb-3">
+            <div
+              key={s.label}
+              className={`reveal relative px-4 py-6 md:py-0
+                ${i % 2 === 0 ? "border-r border-gold/40 md:border-r" : ""}
+                ${i < 2 ? "border-b border-gold/40 md:border-b-0" : ""}
+                ${i === 1 ? "md:border-r md:border-gold/40" : ""}
+                ${i === 2 ? "md:border-r md:border-gold/40" : ""}`}
+            >
+              <div className="font-display font-bold text-4xl sm:text-5xl md:text-6xl text-sienna leading-none mb-3">
                 <Counter end={s.n} suffix={s.suffix} />
               </div>
               <p className="text-burgundy/70 text-[10px] md:text-xs tracking-[0.3em] uppercase font-bold">{s.label}</p>
@@ -213,7 +229,7 @@ function Home() {
       </section>
 
       {/* OUR STORY */}
-      <section id="story" className="relative bg-paper paper-grain py-24 md:py-32 px-6">
+      <section id="story" className="relative bg-paper paper-grain py-16 md:py-32 px-6">
         <div className="max-w-6xl mx-auto grid md:grid-cols-12 gap-12 md:gap-16 items-start">
           <div className="reveal md:col-span-5 md:sticky md:top-28">
             <div className="relative">
@@ -236,7 +252,7 @@ function Home() {
               <div className="h-px w-8 bg-amber" />
               <p className="text-sienna tracking-[0.3em] text-xs uppercase font-bold">Our Story</p>
             </div>
-            <h2 className="font-display text-5xl md:text-6xl text-burgundy mb-3 leading-[1.05]">
+            <h2 className="font-display text-4xl sm:text-5xl md:text-6xl text-burgundy mb-3 leading-[1.05]">
               A Faithful Journey,
               <span className="block italic font-medium text-sienna">Together.</span>
             </h2>
@@ -249,7 +265,7 @@ function Home() {
             </div>
 
             <blockquote className="my-10 border-l-4 border-amber pl-6 py-2">
-              <p className="font-display italic text-burgundy text-3xl md:text-4xl leading-tight">
+              <p className="font-display italic text-burgundy text-2xl md:text-4xl leading-snug">
                 "It's a God thing. I'm living proof."
               </p>
             </blockquote>
@@ -263,16 +279,16 @@ function Home() {
       </section>
 
       {/* WHAT WE PLAY */}
-      <section id="music" className="relative bg-burgundy text-cream py-24 md:py-32 px-6 overflow-hidden">
+      <section id="music" className="relative bg-burgundy text-cream py-16 md:py-32 px-6 overflow-hidden">
         <div className="absolute inset-0 dark-grain opacity-15 pointer-events-none" />
         <div className="relative max-w-6xl mx-auto">
           <div className="reveal text-center mb-16">
             <div className="flex items-center justify-center gap-4 mb-4">
-              <div className="h-px w-10 bg-gold/60" />
+              <div className="hidden sm:block h-px w-10 bg-gold/60" />
               <p className="text-gold tracking-[0.3em] text-xs uppercase font-bold">What We Play</p>
-              <div className="h-px w-10 bg-gold/60" />
+              <div className="hidden sm:block h-px w-10 bg-gold/60" />
             </div>
-            <h2 className="font-display text-5xl md:text-6xl text-cream mb-4 leading-tight letterpress">
+            <h2 className="font-display text-4xl sm:text-5xl md:text-6xl text-cream mb-4 leading-tight letterpress">
               From The Hits
               <span className="block italic font-medium text-gold">to the Hymns.</span>
             </h2>
@@ -310,16 +326,16 @@ function Home() {
       </section>
 
       {/* WATCH & LISTEN */}
-      <section id="listen" className="relative bg-burgundy-deep py-24 md:py-32 px-6 overflow-hidden">
+      <section id="listen" className="relative bg-burgundy-deep py-16 md:py-32 px-6 overflow-hidden">
         <div className="absolute inset-0 dark-grain opacity-25 pointer-events-none" />
         <div className="relative max-w-5xl mx-auto">
           <div className="reveal text-center mb-12">
             <div className="flex items-center justify-center gap-4 mb-4">
-              <div className="h-px w-10 bg-gold/50" />
+              <div className="hidden sm:block h-px w-10 bg-gold/50" />
               <p className="text-gold tracking-[0.3em] text-xs uppercase font-bold animate-pulse">★ New Single · Out Now</p>
-              <div className="h-px w-10 bg-gold/50" />
+              <div className="hidden sm:block h-px w-10 bg-gold/50" />
             </div>
-            <h2 className="font-display text-5xl md:text-7xl text-cream mb-5 leading-[1.02] letterpress">
+            <h2 className="font-display text-4xl sm:text-5xl md:text-7xl text-cream mb-5 leading-[1.02] letterpress">
               <span className="italic font-medium text-gold">"I'm Living</span>
               <span className="italic font-medium text-gold"> Proof."</span>
             </h2>
@@ -353,15 +369,15 @@ function Home() {
 
 
       {/* BOOKING */}
-      <section id="booking" className="bg-cream paper-grain py-24 md:py-32 px-6">
+      <section id="booking" className="bg-cream paper-grain py-16 md:py-32 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="reveal text-center max-w-2xl mx-auto mb-14">
             <div className="flex items-center justify-center gap-4 mb-4">
-              <div className="h-px w-10 bg-amber" />
+              <div className="hidden sm:block h-px w-10 bg-amber" />
               <p className="text-sienna tracking-[0.3em] text-xs uppercase font-bold">Booking</p>
-              <div className="h-px w-10 bg-amber" />
+              <div className="hidden sm:block h-px w-10 bg-amber" />
             </div>
-            <h2 className="font-display text-5xl md:text-6xl text-burgundy leading-tight">
+            <h2 className="font-display text-4xl sm:text-5xl md:text-6xl text-burgundy leading-tight">
               Let's Bring the Music
               <span className="block italic font-medium text-sienna">to You.</span>
             </h2>
@@ -378,9 +394,9 @@ function Home() {
                   <span className="w-10 h-10 rounded-full bg-amber/15 border border-amber/40 flex items-center justify-center text-amber group-hover:bg-amber group-hover:text-cream transition"><Phone size={16} /></span>
                   <span className="font-semibold tracking-wide">662-983-5538</span>
                 </a>
-                <a href="mailto:booking@bollingerministries.com" className="flex items-center gap-4 text-burgundy hover:text-amber transition group">
-                  <span className="w-10 h-10 rounded-full bg-amber/15 border border-amber/40 flex items-center justify-center text-amber group-hover:bg-amber group-hover:text-cream transition"><Mail size={16} /></span>
-                  <span className="font-semibold tracking-wide">booking@bollingerministries.com</span>
+                <a href="mailto:booking@bollingerministries.com" className="flex items-center gap-4 text-burgundy hover:text-amber transition group min-w-0">
+                  <span className="shrink-0 w-10 h-10 rounded-full bg-amber/15 border border-amber/40 flex items-center justify-center text-amber group-hover:bg-amber group-hover:text-cream transition"><Mail size={16} /></span>
+                  <span className="font-semibold tracking-wide break-all text-sm sm:text-base">booking@bollingerministries.com</span>
                 </a>
                 <div className="flex items-center gap-4 text-burgundy">
                   <span className="w-10 h-10 rounded-full bg-amber/15 border border-amber/40 flex items-center justify-center text-amber"><MapPin size={16} /></span>
@@ -397,7 +413,7 @@ function Home() {
             </div>
 
             <form
-              className="reveal md:col-span-3 relative bg-paper paper-grain p-8 md:p-10 border border-burgundy/20 shadow-xl"
+              className="reveal md:col-span-3 relative bg-paper paper-grain p-6 sm:p-8 md:p-10 border border-burgundy/20 shadow-xl"
               onSubmit={(e: FormEvent) => {
                 e.preventDefault();
                 toast.success("Thank you! We'll be in touch soon.");
