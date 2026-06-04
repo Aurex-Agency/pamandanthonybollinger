@@ -155,7 +155,8 @@ function Home() {
         />
         <div className="absolute inset-0 ink-vignette opacity-70" />
         <div className="absolute inset-0 dark-grain opacity-20 pointer-events-none" />
-        <CornerFrame />
+        <CornerFrame hideOnMobile />
+
 
         <div className="relative z-10 text-center px-6 max-w-5xl">
           <div className="animate-fade-up flex items-center justify-center gap-4 mb-7">
