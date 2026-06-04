@@ -180,7 +180,7 @@ function Home() {
             <Flourish />
           </div>
 
-          <p className="animate-fade-up-delay font-sans text-cream/85 text-lg md:text-xl font-light italic leading-relaxed max-w-2xl mx-auto mb-12">
+          <p className="animate-fade-up-delay font-sans text-cream/85 text-base sm:text-lg md:text-xl font-light italic leading-relaxed max-w-2xl mx-auto mb-10 md:mb-12">
             A friendly mix of oldies and gospel.{" "}
             <span className="not-italic font-semibold text-gold">Sharing what God has done</span>{" "}
             through music and testimony.
