@@ -12,10 +12,10 @@ import singingAsset from "@/assets/singing.asset.json";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Anthony & Pam Bollinger — Faithful Journey Tour" },
+      { title: "Anthony & Pam Bollinger | Faithful Journey Tour" },
       { name: "description", content: "Husband-and-wife duo from Bruce, MS sharing a friendly mix of oldies, country, and gospel. Book Anthony & Pam Bollinger for your church, event, or theater." },
       { property: "og:title", content: "Anthony & Pam Bollinger Ministries" },
-      { property: "og:description", content: "A friendly mix of oldies & gospel — sharing what God has done." },
+      { property: "og:description", content: "A friendly mix of oldies & gospel. Sharing what God has done." },
       { property: "og:image", content: coupleAsset.url },
       { name: "twitter:image", content: coupleAsset.url },
     ],
