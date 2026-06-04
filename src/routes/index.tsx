@@ -64,8 +64,9 @@ function Home() {
 
       {/* HERO */}
       <section id="top" className="relative min-h-[100svh] flex items-center justify-center overflow-hidden">
-        <img src={stageAsset.url} alt="Anthony & Pam Bollinger Faithful Journey Tour stage" className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[oklch(0.16_0.04_255/0.85)] via-[oklch(0.16_0.04_255/0.7)] to-[oklch(0.16_0.04_255/0.92)]" />
+        <img src={stageAsset.url} alt="Anthony & Pam Bollinger Faithful Journey Tour stage" className="absolute inset-0 w-full h-full object-cover scale-110 blur-sm" />
+        <div className="absolute inset-0 bg-[oklch(0.16_0.04_255/0.75)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[oklch(0.16_0.04_255/0.7)] via-[oklch(0.16_0.04_255/0.55)] to-[oklch(0.16_0.04_255/0.95)]" />
         <div className="relative z-10 text-center px-6 max-w-4xl">
           <p className="animate-fade-up text-gold tracking-[0.3em] text-xs md:text-sm uppercase mb-6">Bruce, Mississippi · Est. 2021</p>
           <h1 className="animate-fade-up font-display text-cream text-5xl md:text-7xl lg:text-8xl leading-[1.05] mb-6">

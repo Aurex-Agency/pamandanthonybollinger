@@ -1,17 +1,7 @@
-## Typography Update: Playfair + Inter → DM Serif Display + Fira Sans
+The hero section uses a stage photo (`stageAsset`) as its background. Text or signage visible in that stage image is showing through the current gradient overlay and competing with the white/cream hero headline and subtext, making it hard to read.
 
-Swap the font stack site-wide to the "Storyteller" pairing the user chose.
+Fix approach:
+1. Increase the opacity of the existing dark gradient overlay on the hero so the background image is subdued and any text/signage in the photo is no longer legible.
+2. Optionally add a slight `backdrop-blur` or `blur` to the background image layer to further reduce background detail legibility without losing the stage atmosphere.
 
-### Files to change
-
-1. **`src/routes/__root.tsx`**
-   - Replace the Google Fonts link in `head.links`:
-   ```
-   https://fonts.googleapis.com/css2?family=DM+Serif+Display:wght@400;500;600;700&family=Fira+Sans:wght@300;400;500;600;700&display=swap
-   ```
-
-2. **`src/styles.css`**
-   - Update `--font-display`: `'Playfair Display', Georgia, serif` → `'DM Serif Display', Georgia, serif`
-   - Update `--font-sans`: `'Inter', system-ui, sans-serif` → `'Fira Sans', system-ui, sans-serif`
-
-No other changes. The existing `font-display` and `font-sans` tokens are already wired into headings and body text throughout the site.
+Only the hero overlay styles in `src/routes/index.tsx` need adjusting — no other sections affected.
