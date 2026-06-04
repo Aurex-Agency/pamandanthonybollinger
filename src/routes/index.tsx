@@ -39,6 +39,54 @@ function Flourish({ className = "" }: { className?: string }) {
   );
 }
 
+function LivingProofPlayer() {
+  const [unmuted, setUnmuted] = useState(false);
+  const videoId = "Ak4UieGPQ5c";
+  const src = unmuted
+    ? `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=0&loop=1&playlist=${videoId}&playsinline=1&controls=1&modestbranding=1&rel=0`
+    : `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&playsinline=1&controls=0&modestbranding=1&rel=0`;
+
+  return (
+    <div className="reveal relative">
+      <div className="absolute -inset-3 border border-gold/30 pointer-events-none" />
+      <div className="relative aspect-video overflow-hidden shadow-2xl bg-black">
+        <iframe
+          key={unmuted ? "on" : "off"}
+          src={src}
+          title="Anthony & Pam Bollinger — I'm Living Proof"
+          allow="autoplay; encrypted-media; picture-in-picture"
+          allowFullScreen
+          className="absolute inset-0 w-full h-full"
+        />
+        {!unmuted && (
+          <button
+            onClick={() => setUnmuted(true)}
+            aria-label="Turn audio on"
+            className="absolute inset-0 flex flex-col items-center justify-center bg-burgundy-deep/35 hover:bg-burgundy-deep/45 transition group"
+          >
+            <span className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-amber text-burgundy-deep flex items-center justify-center shadow-2xl border-4 border-gold/40 group-hover:scale-110 transition-transform">
+              <Volume2 size={32} fill="currentColor" />
+            </span>
+            <span className="mt-5 text-cream text-[10px] md:text-xs tracking-[0.4em] uppercase font-bold">
+              Tap to Hear the Story
+            </span>
+          </button>
+        )}
+        {unmuted && (
+          <button
+            onClick={() => setUnmuted(false)}
+            aria-label="Turn audio off"
+            className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-burgundy-deep/80 text-cream border border-gold/40 flex items-center justify-center hover:bg-amber hover:text-burgundy-deep transition"
+          >
+            <VolumeX size={16} />
+          </button>
+        )}
+        <CornerFrame />
+      </div>
+    </div>
+  );
+}
+
 function CornerFrame() {
   return (
     <>
