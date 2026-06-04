@@ -62,12 +62,19 @@ function LivingProofPlayer() {
           <button
             onClick={() => setUnmuted(true)}
             aria-label="Turn audio on"
-            className="absolute inset-0 flex flex-col items-center justify-center bg-burgundy-deep hover:bg-burgundy-deep/95 transition group"
+            className="absolute inset-0 flex flex-col items-center justify-center bg-burgundy-deep hover:bg-burgundy-deep/95 transition group overflow-hidden"
           >
-            <span className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-amber text-burgundy-deep flex items-center justify-center shadow-2xl border-4 border-gold/40 group-hover:scale-110 transition-transform">
+            <img
+              src={stageAsset.url}
+              alt=""
+              aria-hidden
+              className="absolute inset-0 w-full h-full object-cover opacity-25 mix-blend-overlay grayscale contrast-125"
+            />
+            <div className="absolute inset-0 dark-grain opacity-30 pointer-events-none" />
+            <span className="relative w-20 h-20 md:w-24 md:h-24 rounded-full bg-amber text-burgundy-deep flex items-center justify-center shadow-2xl border-4 border-gold/40 group-hover:scale-110 transition-transform">
               <Volume2 size={32} fill="currentColor" />
             </span>
-            <span className="mt-5 text-cream text-[10px] md:text-xs tracking-[0.4em] uppercase font-bold">
+            <span className="relative mt-5 text-cream text-[10px] md:text-xs tracking-[0.4em] uppercase font-bold">
               Tap to Hear the Story
             </span>
           </button>
