@@ -404,7 +404,7 @@ function Home() {
                 </div>
                 <div className="flex items-center gap-4 text-burgundy">
                   <span className="w-10 h-10 rounded-full bg-amber/15 border border-amber/40 flex items-center justify-center text-amber"><Calendar size={16} /></span>
-                  <span className="font-semibold tracking-wide">Booking Sunday Morning & Evening Services</span>
+                  <span className="font-semibold tracking-wide">Booking All Days of the Week</span>
                 </div>
               </div>
               <blockquote className="border-l-4 border-amber pl-5 py-2 text-burgundy/80 italic font-display text-xl">
