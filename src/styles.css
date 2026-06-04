@@ -205,3 +205,9 @@
 
 .reveal { opacity: 0; transform: translateY(28px); transition: opacity 1s ease-out, transform 1s ease-out; }
 .reveal.in { opacity: 1; transform: translateY(0); }
+
+@keyframes marquee-x {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@utility animate-marquee-x { animation: marquee-x 50s linear infinite; will-change: transform; }
