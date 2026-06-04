@@ -185,7 +185,7 @@ function Home() {
             <p className="text-burgundy tracking-[0.25em] text-xs uppercase mb-3">Booking</p>
             <h2 className="font-display text-4xl md:text-5xl text-navy mb-5 leading-tight">Let's Bring The Music To You</h2>
             <p className="text-foreground/80 mb-8 leading-relaxed">
-              We travel over 100 dates a year across the southeast — churches, theaters, conferences, and community events. We'd love to hear about yours.
+              We travel over 100 dates a year across the southeast: churches, theaters, conferences, and community events. We'd love to hear about yours.
             </p>
             <div className="space-y-4 text-foreground/85">
               <a href="tel:6629835538" className="flex items-center gap-3 hover:text-burgundy transition"><Phone size={18} className="text-gold"/> 662-983-5538</a>
