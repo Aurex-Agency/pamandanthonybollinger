@@ -174,7 +174,7 @@ function Home() {
               </button>
             </div>
           </div>
-          <p className="reveal text-center mt-6 text-muted-foreground italic">Featuring their latest single, <span className="text-burgundy not-italic font-semibold">"I'm Living Proof"</span> — coming soon to streaming & radio.</p>
+          <p className="reveal text-center mt-6 text-muted-foreground italic">Featuring their latest single, <span className="text-burgundy not-italic font-semibold">"I'm Living Proof,"</span> coming soon to streaming & radio.</p>
         </div>
       </section>
 
