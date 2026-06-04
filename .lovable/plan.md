@@ -1,49 +1,30 @@
-Rebuild the single-page site so it feels authentic, handcrafted, and high-converting using the chosen Heritage Press Kit direction.
+Replace the static video poster in the Watch & Listen section with the YouTube embed for "I'm Living Proof" (video id `Ak4UieGPQ5c`), and rework the surrounding copy to build buzz around the single as Anthony's testimony song.
 
-## Design tokens (locked, applied verbatim)
+## Embed behavior
 
-Update `src/styles.css`:
-- Fonts: swap to Lora (display) + Nunito Sans (body). Update Google Fonts link in `__root.tsx`.
-- Palette tokens (oklch equivalents of):
-  - `--cream` #fdfaf6 (paper)
-  - `--burgundy` #5c2018 (deep burgundy, primary)
-  - `--sienna` #9b4423 (secondary)
-  - `--amber` #d4842a (accent / CTA)
-  - `--gold` #e8b84a (highlight)
-  - `--ink` #3a140f (vignette)
-- Add subtle paper-grain texture utility (CSS background-image with transparenttextures.com pattern) and an `.ink-vignette` radial overlay class.
+- Embed via iframe: `https://www.youtube.com/embed/Ak4UieGPQ5c?autoplay=1&mute=1&loop=1&playlist=Ak4UieGPQ5c&playsinline=1&controls=0&modestbranding=1&rel=0`.
+- Autoplays muted (required for browser autoplay to work) on a loop, so the section feels alive when the user scrolls in.
+- Overlay a tap-to-unmute button (gold circular speaker icon) that, on click, swaps the iframe src to the same URL with `mute=0&autoplay=1&controls=1` so audio kicks in and standard controls appear. Track unmuted state with `useState`.
+- Keep the existing framed cream mat + corner brackets so the player still feels like a press kit playbill, not a raw YouTube embed.
 
-## Section-by-section rebuild (full-width bands)
+## Copy & buzz
 
-Each band fills the viewport width, generous vertical padding, alternating cream/burgundy/dark backgrounds.
+Reframe the section around the single:
 
-1. **Sticky nav** — thin cream bar with hairline burgundy border, serif logotype with italic ampersand, uppercase tracked links, single amber Book CTA with the "double-shadow stamped button" treatment from prototype.
+- Eyebrow: "NEW SINGLE" instead of "Watch & Listen".
+- Headline: "I'm Living Proof." with italic gold accent.
+- Sub-headline / story hook: a short, urgent paragraph tying the song to the 2021 COVID survival story — "Eleven days on the ventilator. Thousands of prayers. One song that came out of it." (paraphrased from the existing Our Story content, no new facts invented).
+- Below the video: a small row of buzz signals — "OUT NOW · STREAMING SOON", a faux waveform/play-count bar feel using small caps and gold dividers, and a clear CTA "Book the Living Proof Tour" linking to `#booking`.
+- Keep the existing italic caption but rewrite it to point at the song's meaning rather than a generic teaser.
 
-2. **Hero band** — burgundy background with layered vignette + grain + faded grayscale stage photo (mix-blend-overlay), corner frame brackets, gold hairline divider w/ "BRUCE, MISSISSIPPI · EST. 2021" label, big Lora headline (italic "Anthony & Pam" + bold "Bollinger"), hand-drawn SVG flourish, italic subhead with gold accent line, dual stamped CTA buttons, "THE TESTIMONY" scroll indicator.
+## Accessibility / polish
 
-3. **Stats playbill band** — cream paper, 4 stats laid out as ticket-stub style cards with sienna serif numerals and uppercase Nunito labels, separated by gold vertical rules.
-
-4. **Our Story band** — cream/paper with grain. Asymmetric: portrait on left framed with offset amber border + corner brackets; long testimony on right with drop-cap on first paragraph, italic burgundy pull-quote "It's a God thing. I'm living proof." set large as a stand-alone block between paragraphs.
-
-5. **What We Play band** — deep burgundy, "FROM THE HITS TO THE HYMNS" overline, four genre cards as cream-paper "playbill tickets" with amber icon, serif title, hairline rule.
-
-6. **Watch & Listen band** — dark ink background, video poster in a framed cream mat with corner brackets, gold round play button, italic caption referencing "I'm Living Proof."
-
-7. **Booking band** — cream paper, two-column: left contact details with amber icons + sienna script-feel headings; right form styled as paper card with burgundy labels, amber focus rings, burgundy "Send Booking Inquiry" stamped CTA.
-
-8. **Footer** — burgundy band, centered logotype, italic tagline, gold-circle social icons, hashtags, copyright in tracked small caps.
-
-## Motion & polish
-
-- Keep `useReveal` scroll fades; slow them slightly (1s).
-- Add subtle parallax to hero photo (CSS-only via background-attachment fallback OK).
-- Underline-draw on nav links.
+- iframe has `title="Anthony & Pam Bollinger — I'm Living Proof"`, `allow="autoplay; encrypted-media; picture-in-picture"`, `allowFullScreen`.
+- The unmute button is a real `<button>` with `aria-label="Turn audio on"` / `"Turn audio off"`.
+- When unmuted, hide the big center button and surface a small mute toggle in the corner so the controls don't fight the YouTube UI.
 
 ## Files touched
 
-- `src/styles.css` — replace palette tokens, fonts, add texture/vignette utilities, replace cream/navy/gold mappings with new Autumn Harvest values (keep existing token names `--cream`, `--navy`, `--navy-deep`, `--gold`, `--burgundy` but remap their values so existing class names still work; add `--sienna`, `--amber`, `--ink`).
-- `src/routes/__root.tsx` — swap Google Fonts link to Lora + Nunito Sans.
-- `src/routes/index.tsx` — rewrite all sections following the layout above, fix the hydration whitespace issue around the `mailto:` link by removing the stray space inside the anchor.
-- No new dependencies.
+- `src/routes/index.tsx` — only the Watch & Listen section (`#listen`) and a small `useState` import addition; replace the `singingAsset` poster + play-button block with the iframe + overlay; rewrite eyebrow, headline, copy, and caption around "I'm Living Proof".
 
-Content is unchanged; only structure, hierarchy, and styling change.
+No new dependencies, no styles.css changes.
