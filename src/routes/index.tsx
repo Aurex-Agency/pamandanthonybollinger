@@ -265,7 +265,7 @@ function Home() {
             </div>
 
             <blockquote className="my-10 border-l-4 border-amber pl-6 py-2">
-              <p className="font-display italic text-burgundy text-3xl md:text-4xl leading-tight">
+              <p className="font-display italic text-burgundy text-2xl md:text-4xl leading-snug">
                 "It's a God thing. I'm living proof."
               </p>
             </blockquote>
