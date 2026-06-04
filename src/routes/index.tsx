@@ -163,7 +163,7 @@ function Home() {
             <p className="text-burgundy tracking-[0.25em] text-xs uppercase mb-3">Watch & Listen</p>
             <h2 className="font-display text-4xl md:text-5xl text-navy mb-5">Experience The Sound</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-              From a quiet hymn to a foot-tapping classic — hear what a night with Anthony & Pam feels like.
+              From a quiet hymn to a foot-tapping classic. Hear what a night with Anthony & Pam feels like.
             </p>
           </div>
           <div className="reveal relative aspect-video rounded-2xl overflow-hidden shadow-2xl border-4 border-card">
