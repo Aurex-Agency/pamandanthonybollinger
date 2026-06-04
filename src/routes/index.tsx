@@ -219,7 +219,7 @@ function Home() {
                 ${i === 1 ? "md:border-r md:border-gold/40" : ""}
                 ${i === 2 ? "md:border-r md:border-gold/40" : ""}`}
             >
-              <div className="font-display font-bold text-4xl sm:text-5xl md:text-6xl text-sienna leading-none mb-3">
+              <div className="font-display font-bold text-3xl sm:text-5xl md:text-6xl text-sienna leading-none mb-3">
                 <Counter end={s.n} suffix={s.suffix} />
               </div>
               <p className="text-burgundy/70 text-[10px] md:text-xs tracking-[0.3em] uppercase font-bold">{s.label}</p>
