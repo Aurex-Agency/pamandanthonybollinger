@@ -12,10 +12,10 @@ import singingAsset from "@/assets/singing.asset.json";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Anthony & Pam Bollinger — Faithful Journey Tour" },
+      { title: "Anthony & Pam Bollinger | Faithful Journey Tour" },
       { name: "description", content: "Husband-and-wife duo from Bruce, MS sharing a friendly mix of oldies, country, and gospel. Book Anthony & Pam Bollinger for your church, event, or theater." },
       { property: "og:title", content: "Anthony & Pam Bollinger Ministries" },
-      { property: "og:description", content: "A friendly mix of oldies & gospel — sharing what God has done." },
+      { property: "og:description", content: "A friendly mix of oldies & gospel. Sharing what God has done." },
       { property: "og:image", content: coupleAsset.url },
       { name: "twitter:image", content: coupleAsset.url },
     ],
@@ -72,7 +72,7 @@ function Home() {
             Anthony <span className="text-gold italic font-medium">&</span> Pam<br/>Bollinger
           </h1>
           <p className="animate-fade-up-delay text-cream/85 text-lg md:text-2xl font-light max-w-2xl mx-auto mb-10 leading-relaxed">
-            A friendly mix of oldies & gospel — sharing what God has done.
+            A friendly mix of oldies & gospel. Sharing what God has done.
           </p>
           <div className="animate-fade-up-delay-2 flex flex-col sm:flex-row gap-4 justify-center">
             <a href="#booking" className="bg-gold text-navy-deep px-8 py-4 rounded-md font-semibold tracking-wide hover:brightness-110 hover:-translate-y-0.5 transition-all shadow-lg shadow-[oklch(0_0_0/0.3)]">
@@ -93,7 +93,7 @@ function Home() {
             <p className="text-burgundy tracking-[0.25em] text-xs uppercase mb-3">What We Play</p>
             <h2 className="font-display text-4xl md:text-5xl text-navy mb-5">From The Hits To The Hymns</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-              A friendly mix of oldies from the 60s, 70s, and 80s — Pop, R&B, and Country — with every performance capped off by gospel music, both covers and originals.
+              A friendly mix of oldies from the 60s, 70s, and 80s. Pop, R&B, and Country, with every performance capped off by gospel music, both covers and originals.
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
@@ -126,9 +126,11 @@ function Home() {
             <p className="text-burgundy tracking-[0.25em] text-xs uppercase mb-3">Our Story</p>
             <h2 className="font-display text-4xl md:text-5xl text-navy mb-6 leading-tight">A Faithful Journey, Together</h2>
             <div className="space-y-5 text-foreground/85 leading-relaxed">
-              <p>We've been making music our whole lives. We met in junior high, found our way back to each other in 1994, and have been married 33 years — three children and five grandkids later, still singing side by side.</p>
-              <p>Anthony started drumming at age five and spent 39 years on stage with his father. Together we ran a Branson-style family theatre right here in Bruce, Mississippi, where we welcomed over 100,000 guests from across the country and nine foreign countries.</p>
-              <p>In 2021 everything changed. Anthony fought double COVID pneumonia and spent 11 days on a ventilator. The doctors gave little hope. Thousands of prayers later, by God's grace, he's still here. That miracle launched this ministry — and every song since has been a thank-you note.</p>
+              <p>We have known each other since Jr High, and although our paths went in different ways, God brought us together in February 1994. After a few short months, we knew we were meant to be together. On July 17, 1994 we married at Pam's church in Memphis. This July will be 33 years. We have three children, two boys and a girl, and five grandkids, three boys and two girls. To say we are blessed is an understatement.</p>
+              <p>We both have been involved in music since our childhood years. Pam has played piano at church and sang with a ladies trio. Her specials on Sundays would put a smile on the faces of the congregation and stir the spirit for worship. Today, along with our schedule of over 100 dates a year, she still serves as pianist at our church, Mt Moriah Baptist.</p>
+              <p>I grew up in a home filled with music. My Dad was playing music when I was born. In 1963, Daddy and four of his cousins started a cover band, William Morgan and the Five C's. They played for eleven years and were regarded as one of the best bands in the southeast. At the age of five I was put on a drum stool and played my first song; the rest just seemed to fall into place. After the C's, Daddy moved to Southern Gospel and I was the drummer. That was 1972. By the time I was 14, I was playing piano for the quartet and singing lead. I worked on my first studio session at 13. One of the biggest blessings through the years: I got to walk on stages for 39 years with my Dad.</p>
+              <p>One of the first times Pam and I really got to work together musically was when I had a quartet called "The Father's Sons". We were booked at The Jim Stafford Theater in Branson, Missouri in two weeks and our tenor singer had to leave the group. She fit right in. My family made the decision to start a Branson-style theatre in our hometown of Bruce, MS. It consisted of our entire family. For nine and a half years, we played forty two-and-a-half-hour shows a year. In that period, we sang to over one hundred thousand people from across the country and nine foreign countries.</p>
+              <p>In 2021, I was diagnosed with COVID-19. That was on a Thursday. I put myself in quarantine, but by Monday, I had Pam call an ambulance because I could not breathe. The next 35 days would be the catalyst for our ministry today. Double COVID pneumonia and 11 days on the vent, they gave my family very little hope of survival. But with literally thousands of prayers, God sent a miracle and I'm still here. We began our ministry in late 2021 and it has been such a blessing. Today we travel all over the southeast sharing what God has done for us.</p>
               <p className="font-display italic text-burgundy text-xl pt-2">"It's a God thing. I'm living proof."</p>
             </div>
           </div>
@@ -161,7 +163,7 @@ function Home() {
             <p className="text-burgundy tracking-[0.25em] text-xs uppercase mb-3">Watch & Listen</p>
             <h2 className="font-display text-4xl md:text-5xl text-navy mb-5">Experience The Sound</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-              From a quiet hymn to a foot-tapping classic — hear what a night with Anthony & Pam feels like.
+              From a quiet hymn to a foot-tapping classic. Hear what a night with Anthony & Pam feels like.
             </p>
           </div>
           <div className="reveal relative aspect-video rounded-2xl overflow-hidden shadow-2xl border-4 border-card">
@@ -172,7 +174,7 @@ function Home() {
               </button>
             </div>
           </div>
-          <p className="reveal text-center mt-6 text-muted-foreground italic">Featuring their latest single, <span className="text-burgundy not-italic font-semibold">"I'm Living Proof"</span> — coming soon to streaming & radio.</p>
+          <p className="reveal text-center mt-6 text-muted-foreground italic">Featuring their latest single, <span className="text-burgundy not-italic font-semibold">"I'm Living Proof,"</span> coming soon to streaming & radio.</p>
         </div>
       </section>
 
@@ -183,7 +185,7 @@ function Home() {
             <p className="text-burgundy tracking-[0.25em] text-xs uppercase mb-3">Booking</p>
             <h2 className="font-display text-4xl md:text-5xl text-navy mb-5 leading-tight">Let's Bring The Music To You</h2>
             <p className="text-foreground/80 mb-8 leading-relaxed">
-              We travel over 100 dates a year across the southeast — churches, theaters, conferences, and community events. We'd love to hear about yours.
+              We travel over 100 dates a year across the southeast: churches, theaters, conferences, and community events. We'd love to hear about yours.
             </p>
             <div className="space-y-4 text-foreground/85">
               <a href="tel:6629835538" className="flex items-center gap-3 hover:text-burgundy transition"><Phone size={18} className="text-gold"/> 662-983-5538</a>

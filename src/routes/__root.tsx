@@ -77,10 +77,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Anthony & Pam Bollinger — Faithful Journey Tour" },
+      { title: "Anthony & Pam Bollinger | Faithful Journey Tour" },
       { name: "description", content: "Husband-and-wife duo from Bruce, MS sharing a friendly mix of oldies, country, and gospel. Book Anthony & Pam Bollinger for your church, event, or theater." },
       { property: "og:title", content: "Anthony & Pam Bollinger Ministries" },
-      { property: "og:description", content: "A friendly mix of oldies & gospel — sharing what God has done." },
+      { property: "og:description", content: "A friendly mix of oldies & gospel. Sharing what God has done." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
