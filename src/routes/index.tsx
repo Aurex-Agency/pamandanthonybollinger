@@ -72,7 +72,7 @@ function Home() {
             Anthony <span className="text-gold italic font-medium">&</span> Pam<br/>Bollinger
           </h1>
           <p className="animate-fade-up-delay text-cream/85 text-lg md:text-2xl font-light max-w-2xl mx-auto mb-10 leading-relaxed">
-            A friendly mix of oldies & gospel — sharing what God has done.
+            A friendly mix of oldies & gospel. Sharing what God has done.
           </p>
           <div className="animate-fade-up-delay-2 flex flex-col sm:flex-row gap-4 justify-center">
             <a href="#booking" className="bg-gold text-navy-deep px-8 py-4 rounded-md font-semibold tracking-wide hover:brightness-110 hover:-translate-y-0.5 transition-all shadow-lg shadow-[oklch(0_0_0/0.3)]">
