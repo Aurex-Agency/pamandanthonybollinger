@@ -252,7 +252,7 @@ function Home() {
               <div className="h-px w-8 bg-amber" />
               <p className="text-sienna tracking-[0.3em] text-xs uppercase font-bold">Our Story</p>
             </div>
-            <h2 className="font-display text-5xl md:text-6xl text-burgundy mb-3 leading-[1.05]">
+            <h2 className="font-display text-4xl sm:text-5xl md:text-6xl text-burgundy mb-3 leading-[1.05]">
               A Faithful Journey,
               <span className="block italic font-medium text-sienna">Together.</span>
             </h2>
@@ -284,11 +284,11 @@ function Home() {
         <div className="relative max-w-6xl mx-auto">
           <div className="reveal text-center mb-16">
             <div className="flex items-center justify-center gap-4 mb-4">
-              <div className="h-px w-10 bg-gold/60" />
+              <div className="hidden sm:block h-px w-10 bg-gold/60" />
               <p className="text-gold tracking-[0.3em] text-xs uppercase font-bold">What We Play</p>
-              <div className="h-px w-10 bg-gold/60" />
+              <div className="hidden sm:block h-px w-10 bg-gold/60" />
             </div>
-            <h2 className="font-display text-5xl md:text-6xl text-cream mb-4 leading-tight letterpress">
+            <h2 className="font-display text-4xl sm:text-5xl md:text-6xl text-cream mb-4 leading-tight letterpress">
               From The Hits
               <span className="block italic font-medium text-gold">to the Hymns.</span>
             </h2>
@@ -331,11 +331,11 @@ function Home() {
         <div className="relative max-w-5xl mx-auto">
           <div className="reveal text-center mb-12">
             <div className="flex items-center justify-center gap-4 mb-4">
-              <div className="h-px w-10 bg-gold/50" />
+              <div className="hidden sm:block h-px w-10 bg-gold/50" />
               <p className="text-gold tracking-[0.3em] text-xs uppercase font-bold animate-pulse">★ New Single · Out Now</p>
-              <div className="h-px w-10 bg-gold/50" />
+              <div className="hidden sm:block h-px w-10 bg-gold/50" />
             </div>
-            <h2 className="font-display text-5xl md:text-7xl text-cream mb-5 leading-[1.02] letterpress">
+            <h2 className="font-display text-4xl sm:text-5xl md:text-7xl text-cream mb-5 leading-[1.02] letterpress">
               <span className="italic font-medium text-gold">"I'm Living</span>
               <span className="italic font-medium text-gold"> Proof."</span>
             </h2>
@@ -373,11 +373,11 @@ function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="reveal text-center max-w-2xl mx-auto mb-14">
             <div className="flex items-center justify-center gap-4 mb-4">
-              <div className="h-px w-10 bg-amber" />
+              <div className="hidden sm:block h-px w-10 bg-amber" />
               <p className="text-sienna tracking-[0.3em] text-xs uppercase font-bold">Booking</p>
-              <div className="h-px w-10 bg-amber" />
+              <div className="hidden sm:block h-px w-10 bg-amber" />
             </div>
-            <h2 className="font-display text-5xl md:text-6xl text-burgundy leading-tight">
+            <h2 className="font-display text-4xl sm:text-5xl md:text-6xl text-burgundy leading-tight">
               Let's Bring the Music
               <span className="block italic font-medium text-sienna">to You.</span>
             </h2>
@@ -413,7 +413,7 @@ function Home() {
             </div>
 
             <form
-              className="reveal md:col-span-3 relative bg-paper paper-grain p-8 md:p-10 border border-burgundy/20 shadow-xl"
+              className="reveal md:col-span-3 relative bg-paper paper-grain p-6 sm:p-8 md:p-10 border border-burgundy/20 shadow-xl"
               onSubmit={(e: FormEvent) => {
                 e.preventDefault();
                 toast.success("Thank you! We'll be in touch soon.");
