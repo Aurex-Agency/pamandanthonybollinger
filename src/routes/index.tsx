@@ -228,6 +228,11 @@ function Home() {
         </div>
       </section>
 
+      {/* PHOTO MARQUEE */}
+      <PhotoMarquee />
+
+
+
       {/* OUR STORY */}
       <section id="story" className="relative bg-paper paper-grain py-16 md:py-32 px-6">
         <div className="max-w-6xl mx-auto grid md:grid-cols-12 gap-12 md:gap-16 items-start">
