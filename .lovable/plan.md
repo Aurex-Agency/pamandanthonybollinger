@@ -1,30 +1,27 @@
-Replace the static video poster in the Watch & Listen section with the YouTube embed for "I'm Living Proof" (video id `Ak4UieGPQ5c`), and rework the surrounding copy to build buzz around the single as Anthony's testimony song.
+Polish the mobile pass without touching the desktop look. The desktop design stays exactly as approved; only mobile-only utility classes (`text-*`, `py-*`, hidden corner brackets, etc.) and one player overlay fix change.
 
-## Embed behavior
+## Issues found in mobile audit
 
-- Embed via iframe: `https://www.youtube.com/embed/Ak4UieGPQ5c?autoplay=1&mute=1&loop=1&playlist=Ak4UieGPQ5c&playsinline=1&controls=0&modestbranding=1&rel=0`.
-- Autoplays muted (required for browser autoplay to work) on a loop, so the section feels alive when the user scrolls in.
-- Overlay a tap-to-unmute button (gold circular speaker icon) that, on click, swaps the iframe src to the same URL with `mute=0&autoplay=1&controls=1` so audio kicks in and standard controls appear. Track unmuted state with `useState`.
-- Keep the existing framed cream mat + corner brackets so the player still feels like a press kit playbill, not a raw YouTube embed.
+1. **Hero headline crowds the viewport.** "Anthony & Pam" wraps to two lines and "Bollinger" runs nearly edge-to-edge at 390px. Subhead is also dense.
+2. **Corner frame brackets sit on top of the hero copy on small screens** (the 6-padding offset is fine on desktop, too tight on mobile).
+3. **Section vertical padding is excessive on mobile.** `py-24 md:py-32` makes the page feel padded out on phones.
+4. **YouTube "Sign in to confirm you're not a bot" UI bleeds through the tap-to-unmute overlay** because the overlay is only `bg-burgundy-deep/35`. The overlay should fully cover the iframe until tapped.
+5. **Pull-quote in Our Story** ("It's a God thing…") is `text-3xl md:text-4xl` — too big on phones, breaks awkwardly.
+6. **Stats lose their gold dividers on mobile** (they're `md:border-r` only). Add horizontal rule between the two rows for rhythm.
+7. **Booking contact email** can overflow; add `break-all` / `min-w-0` to be safe.
+8. **Eyebrow labels** (e.g. "★ NEW SINGLE · OUT NOW") wrap on narrow widths because of the flanking rules. Allow the rules to shrink/hide on mobile.
 
-## Copy & buzz
+## Changes (`src/routes/index.tsx` only — no design-token edits)
 
-Reframe the section around the single:
+- Hero `<h1>`: scale down the mobile sizes (italic line `text-4xl sm:text-5xl md:text-7xl lg:text-8xl`, "Bollinger" `text-5xl sm:text-6xl md:text-8xl lg:text-[9rem]`). Reduce subhead to `text-base md:text-xl`. Tighten hero vertical padding via `min-h-[100svh] py-20 md:py-0`.
+- `CornerFrame`: add `hidden md:block` on the brackets in the hero so they don't crowd mobile copy. Keep them inside the video frame (smaller and already fit).
+- Wrap every section's padding from `py-24 md:py-32` → `py-16 md:py-32`. Reduce horizontal `px-6` to `px-5` only where it helps; leave others.
+- Pull-quote in Our Story: `text-2xl md:text-4xl` with `leading-snug`.
+- Stats: change layout to a 2x2 grid on mobile with `divide-y` and `divide-x` dividers using `border-gold/40`. Keep desktop 4-col with vertical rules.
+- Booking contact rows: add `min-w-0` to the container, `break-all` on the email text so it never overflows.
+- Eyebrow rule pairs (the short flanking `h-px w-10` lines): wrap with `hidden sm:block` so the eyebrow text gets full width on tiny screens.
+- Video player overlay: change `bg-burgundy-deep/35 hover:bg-burgundy-deep/45` to `bg-burgundy-deep hover:bg-burgundy-deep/95` so the YouTube nag is fully hidden until the user taps unmute. Also add a faded stage image (`stageAsset`) as the overlay background so the muted state looks intentional and not flat. Add `dark-grain` over it for texture parity with the rest of the dark sections.
+- Nav mobile menu items: already fine. Verify hash links close menu on tap (already wired with `setOpen(false)`).
+- Form: stack the `Name / Email / Phone / Date` fields fully on mobile (current `grid sm:grid-cols-2` already handles this — confirm spacing is tight).
 
-- Eyebrow: "NEW SINGLE" instead of "Watch & Listen".
-- Headline: "I'm Living Proof." with italic gold accent.
-- Sub-headline / story hook: a short, urgent paragraph tying the song to the 2021 COVID survival story — "Eleven days on the ventilator. Thousands of prayers. One song that came out of it." (paraphrased from the existing Our Story content, no new facts invented).
-- Below the video: a small row of buzz signals — "OUT NOW · STREAMING SOON", a faux waveform/play-count bar feel using small caps and gold dividers, and a clear CTA "Book the Living Proof Tour" linking to `#booking`.
-- Keep the existing italic caption but rewrite it to point at the song's meaning rather than a generic teaser.
-
-## Accessibility / polish
-
-- iframe has `title="Anthony & Pam Bollinger — I'm Living Proof"`, `allow="autoplay; encrypted-media; picture-in-picture"`, `allowFullScreen`.
-- The unmute button is a real `<button>` with `aria-label="Turn audio on"` / `"Turn audio off"`.
-- When unmuted, hide the big center button and surface a small mute toggle in the corner so the controls don't fight the YouTube UI.
-
-## Files touched
-
-- `src/routes/index.tsx` — only the Watch & Listen section (`#listen`) and a small `useState` import addition; replace the `singingAsset` poster + play-button block with the iframe + overlay; rewrite eyebrow, headline, copy, and caption around "I'm Living Proof".
-
-No new dependencies, no styles.css changes.
+No changes to `src/styles.css`, no new files, no new deps. Desktop screenshots stay identical.
