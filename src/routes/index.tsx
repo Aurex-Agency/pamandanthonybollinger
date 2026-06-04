@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
-import { Music, Radio, Guitar, Cross, Menu, X, Mail, Phone, MapPin, Calendar, Facebook, Youtube, Instagram, Play, Volume2, VolumeX } from "lucide-react";
+import { Music, Radio, Guitar, Cross, Menu, X, Mail, Phone, MapPin, Calendar, Facebook, Youtube, Instagram, Volume2, VolumeX } from "lucide-react";
 import { useReveal } from "@/hooks/use-reveal";
 import { Counter } from "@/components/Counter";
 import { toast } from "sonner";
