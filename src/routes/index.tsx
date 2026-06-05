@@ -181,6 +181,9 @@ function Home() {
             <span className="block font-bold tracking-tight text-5xl sm:text-6xl md:text-8xl lg:text-[9rem] mt-1">
               Bollinger
             </span>
+            <span className="block text-gold tracking-[0.2em] text-sm sm:text-base md:text-lg uppercase font-bold mt-3">
+              Southern Gospel & Oldies Duo
+            </span>
           </h1>
 
           <div className="animate-fade-up-delay flex justify-center text-amber mb-7">
