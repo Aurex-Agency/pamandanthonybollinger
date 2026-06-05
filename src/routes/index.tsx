@@ -136,15 +136,20 @@ function Home() {
             {open ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
-        {open && (
-          <div className="md:hidden bg-cream border-t border-burgundy/15 px-6 py-4 space-y-3">
-            {nav.map((n) => (
-              <a key={n.href} href={n.href} onClick={() => setOpen(false)} className="block text-sienna font-semibold tracking-widest uppercase text-xs py-1.5">
-                {n.label}
-              </a>
-            ))}
+        <div
+          className="md:hidden grid transition-[grid-template-rows] duration-300 ease-out"
+          style={{ gridTemplateRows: open ? "1fr" : "0fr" }}
+        >
+          <div className="overflow-hidden">
+            <div className="bg-cream border-t border-burgundy/15 px-6 py-4 space-y-3">
+              {nav.map((n) => (
+                <a key={n.href} href={n.href} onClick={() => setOpen(false)} className="block text-sienna font-semibold tracking-widest uppercase text-xs py-1.5">
+                  {n.label}
+                </a>
+              ))}
+            </div>
           </div>
-        )}
+        </div>
       </header>
 
       {/* HERO */}
