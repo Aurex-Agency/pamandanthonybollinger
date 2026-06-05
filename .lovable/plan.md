@@ -1,14 +1,11 @@
-Add canonical links and og:url meta tags to the homepage, pointing to the custom domain `https://www.anthonyandpambollinger.com`.
+I confirmed the live preview renders correctly, but the published URL `https://pamandanthonybollinger.lovable.app/` is returning a platform-level `404 Not Found`. The project is published and public, so this is not a GoDaddy/domain DNS issue anymore.
 
-## Changes
+Plan:
+1. Republish/update the current working preview so the published `.lovable.app` deployment is regenerated from the live app.
+2. Verify the published URL again after the update.
+3. If it still returns 404 after republishing, escalate as a Lovable hosting/domain mapping issue because the app itself is rendering correctly in preview while the published deployment route is missing.
 
-1. **`src/routes/index.tsx`** — Add to the route's `head()`:
-   - `og:url` meta tag: `https://www.anthonyandpambollinger.com/`
-   - Canonical link: `<link rel="canonical" href="https://www.anthonyandpambollinger.com/" />`
-
-2. **`src/routes/__root.tsx`** — Remove the root-level `og:image` and `twitter:image` meta tags (these should live on leaf routes per TanStack Router SEO guidelines; since the site currently has only the homepage, moving them to `index.tsx` alongside the new tags keeps the setup correct).
-
-## Why
-- Canonical tags tell search engines the preferred URL, preventing duplicate-content issues if the site is accessed via the `.lovable.app` domain or with query parameters.
-- `og:url` ensures social shares always link back to the custom domain.
-- No other routes exist yet, so only the homepage (`/`) needs these tags.
+Technical detail:
+- Preview works: the homepage loads correctly.
+- Published URL fails before the app loads: HTTP 404 with plain `Not Found` body.
+- Publish settings show the site is already `public`, so privacy settings are not the cause.
