@@ -450,8 +450,9 @@ function Home() {
                 <Field label="Event Date" name="date" type="date" />
               </div>
               <div className="mb-6">
-                <label className="block text-[10px] uppercase tracking-[0.25em] font-bold text-sienna mb-2">Message</label>
+                <label htmlFor="message" className="block text-[10px] uppercase tracking-[0.25em] font-bold text-sienna mb-2">Message</label>
                 <textarea
+                  id="message"
                   name="message"
                   rows={5}
                   required
@@ -518,8 +519,9 @@ function Home() {
 function Field({ label, name, type = "text", required }: { label: string; name: string; type?: string; required?: boolean }) {
   return (
     <div>
-      <label className="block text-[10px] uppercase tracking-[0.25em] font-bold text-sienna mb-2">{label}{required && " *"}</label>
+      <label htmlFor={name} className="block text-[10px] uppercase tracking-[0.25em] font-bold text-sienna mb-2">{label}{required && " *"}</label>
       <input
+        id={name}
         name={name}
         type={type}
         required={required}
