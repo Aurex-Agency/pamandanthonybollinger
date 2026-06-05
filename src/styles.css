@@ -4,7 +4,7 @@
 
 @custom-variant dark (&:is(.dark *));
 
-@font-face { font-family: 'fallback'; src: local('Georgia'); }
+@font-face { font-family: 'fallback'; src: local('Georgia'); font-display: swap; }
 
 @theme inline {
   --font-display: 'Lora', Georgia, serif;
