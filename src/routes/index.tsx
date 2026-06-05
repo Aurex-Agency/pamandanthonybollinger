@@ -157,6 +157,10 @@ function Home() {
         <img
           src={stageAsset.url}
           alt=""
+          width={1920}
+          height={1080}
+          fetchPriority="high"
+          decoding="async"
           className="absolute inset-0 w-full h-full object-cover opacity-25 mix-blend-overlay grayscale contrast-125 scale-105"
           aria-hidden
         />
