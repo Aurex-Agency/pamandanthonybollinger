@@ -21,6 +21,9 @@ export const Route = createFileRoute("/")({
       { property: "og:image", content: coupleAsset.url },
       { name: "twitter:image", content: coupleAsset.url },
     ],
+    links: [
+      { rel: "preload", as: "image", href: stageAsset.url, fetchpriority: "high" },
+    ],
   }),
   component: Home,
 });
