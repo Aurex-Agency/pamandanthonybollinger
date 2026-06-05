@@ -18,10 +18,12 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Husband-and-wife duo from Bruce, MS sharing oldies, country, and gospel. Book Anthony & Pam Bollinger for your church, theater, or event." },
       { property: "og:title", content: "Anthony & Pam Bollinger Ministries" },
       { property: "og:description", content: "A friendly mix of oldies & gospel. Sharing what God has done." },
+      { property: "og:url", content: "https://www.anthonyandpambollinger.com/" },
       { property: "og:image", content: coupleAsset.url },
       { name: "twitter:image", content: coupleAsset.url },
     ],
     links: [
+      { rel: "canonical", href: "https://www.anthonyandpambollinger.com/" },
       { rel: "preload", as: "image", href: stageAsset.url, fetchpriority: "high" },
     ],
   }),
